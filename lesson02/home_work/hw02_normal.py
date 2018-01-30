@@ -56,7 +56,7 @@ from random import randint
 list1 = []
 n = int(input('Введите количество (n): '))
 for i in range(0, n):
-    list1.append( randint(-100, 100) )
+    list1.append(randint(-100, 100))
 print(list1)
 
 
@@ -66,3 +66,6 @@ print(list1)
 # например, lst = [1, 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 2, 4, 5, 6]
 # б) элементы исходного списка, которые не имеют повторений:
 # например, lst = [1 , 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 4, 6]
+list2 = list(set(list1))
+print(list2)
+
