@@ -8,8 +8,15 @@
 
 import re
 first_name = ''
-while not re.match('[А-Я][а-я]+', first_name):
+while not re.match('[А-Я][а-я]+$', first_name):
     first_name = input("Введите Имя: ")
+last_name = ''
+while not re.match('[А-Я][а-я]+$', last_name):
+    last_name = input("Введите Фамилию: ")
+email = ''
+while not re.match('[a-z][\w\d_]+@$', email):
+    email = input("Введите email: ")
+
 
 # Задача - 2:
 # Вам дан текст:
