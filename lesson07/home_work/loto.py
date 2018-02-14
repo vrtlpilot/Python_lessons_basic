@@ -57,3 +57,38 @@
 модуль random: http://docs.python.org/3/library/random.html
 
 """
+import random
+
+
+def create_set_of_numbers():
+    numbers = list(range(1, 91))
+    random.shuffle(numbers)
+    return numbers
+
+
+class Card:
+    lines = []
+
+    def __init__(self):
+        numbers = random.sample(create_set_of_numbers(), 15)
+        self.lines.append(numbers[0:5])
+        self.lines.append(numbers[5:10])
+        self.lines.append(numbers[10:])
+        for line in self.lines:
+            line.sort()
+            while len(line) < 9:
+                line.insert(random.randint(0, 9), None)
+
+    def check_number(self, num):
+        li = 0
+        for line in self.lines:
+            i = line.index(num)
+            if i >= 0:
+                return li, i
+            li = li + 1
+        return None
+
+
+if __name__ == '__main__':
+    card = Card
+    print(card.lines)
